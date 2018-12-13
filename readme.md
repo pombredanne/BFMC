@@ -21,9 +21,10 @@ Source code for Bosch Future Mobility Challenge
 
 ## <a name="maintainers">Maintainers</a>
 
-Kilyen Nandor Alpar [RBRO/ENG]
+Kilyen Nandor Alpar [RBRO/PJ-IU]
 >	Nandor.Kilyen2@ro.bosch.com
-Beche Radu
+
+Beche Radu [RBRO/PJ-IU]
 >	fixed-term.Radu.Beche@ro.bosch.com
 
 ## <a name="license">License</a>
@@ -40,7 +41,7 @@ tasks required for the BOSCH Future Mobility Challenge.
 
 ## <a name="build">How to build</a>
 
-You can build the SW for the micro-controller by using the GNU Embedded Toolchain for Arm [download https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads] and GNU Make. You need to set in the MakeFile the correct location of the cross-compiler (GNU Compiler). You have to modify the first parameter in the commands 'AS','CC','CPP','LD','ELF2BIN' (lines 237-241).
+You can build the SW for the micro-controller by using the GNU Embedded Toolchain for Arm ([download link](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)) and GNU Make. You need to set in the MakeFile the correct location of the cross-compiler (GNU Compiler). You have to modify the first parameter in the commands 'AS','CC','CPP','LD','ELF2BIN' (lines 237-241).
 
 ## <a name="licenses">Used 3rd party Licenses</a>
 
@@ -60,4 +61,3 @@ giving feedback.
 	This Software package is provided `` as is `` and without any expressed or implied warranties, including without limitation, the implied warranties of merchantability and fitness for a particular purpose.
 
 -->
-
