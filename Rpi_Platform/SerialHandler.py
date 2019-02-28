@@ -279,27 +279,26 @@ class ReadThread(threading.Thread):
     '''
     def run(self):
         while(self.Run):
-            if self.serialCon.inWaiting()>=1:
-                read_chr=self.serialCon.read()
-                try:
-                    read_chr=(read_chr.decode("ascii"))
-                    if read_chr=='@':
-                        self.isResponse=True
-                        if len(self.buff)!=0:
-                            self.checkWaiters(self.buff)
-                        self.buff=""
-                    elif read_chr=='\r':
-                        self.isResponse=False
-                        if len(self.buff)!=0:
-                            self.checkWaiters(self.buff)
-                        self.buff=""
-                    if self.isResponse:
-                        self.buff+=read_chr
-                    self.fileHandler.write(read_chr)    
-                    if self.printOut:
-                        sys.stdout.write(read_chr)
-                except UnicodeDecodeError:
-                    pass
+            read_chr=self.serialCon.read()
+            try:
+                read_chr=(read_chr.decode("ascii"))
+                if read_chr=='@':
+                    self.isResponse=True
+                    if len(self.buff)!=0:
+                        self.checkWaiters(self.buff)
+                    self.buff=""
+                elif read_chr=='\r':
+                    self.isResponse=False
+                    if len(self.buff)!=0:
+                        self.checkWaiters(self.buff)
+                    self.buff=""
+                if self.isResponse:
+                    self.buff+=read_chr
+                self.fileHandler.write(read_chr)    
+                if self.printOut:
+                    sys.stdout.write(read_chr)
+            except UnicodeDecodeError:
+                pass
     '''
         @name    checkWaiters
         @brief   
